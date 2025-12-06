@@ -1,0 +1,42 @@
+# Create .gitignore
+cat > .gitignore << 'EOF'
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# Allure
+allure-results/
+allure-report/
+.allure/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test output
+test-output/
+screenshots/
+
+# Environment
+.env
+*.env
+EOF
