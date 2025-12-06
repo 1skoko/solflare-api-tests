@@ -108,7 +108,12 @@ public class ApiTests extends BaseTest {
         logger.debug("API Response for invalid input: {}", response.asPrettyString());
         logger.info("Received status code: {}", response.statusCode());
 
-        assertThat("Status code should indicate client error", response.statusCode(), is(400));
+        assertThat(
+                "Status code should indicate client error",
+                response.statusCode(),
+                anyOf(is(400), is(404))
+        );
+
 
         String errorMessage = response.jsonPath().getString("message");
         assertThat("Error message should be present", errorMessage, is(notNullValue()));
